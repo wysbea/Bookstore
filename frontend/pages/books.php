@@ -9,6 +9,12 @@
                 <input type="text" class="form-control" name="title" id="title" placeholder="Title...">
             </div>
             <div class="form-group">
+                <label for="title">Author</label>
+                <select name="author_id" id="author_id" class="form-control">
+                    <option value=""> -- Select Author --</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="description">Description</label>
                 <textarea class="form-control" name="description" id="description" cols="30" rows="5"
                           placeholder="Description..."></textarea>
@@ -24,12 +30,18 @@
         <select name="bookEditSelect" id="bookEditSelect" class="form-control">
             <option value=""> -- Select Book for edit --</option>
         </select>
-        <form role="form" id="bookEdit">
+        <form role="form" id="bookEdit" class="bookEditForm">
             <input type="hidden" name="id" id="id" value="">
             <legend class="voffset2">Edit book</legend>
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" name="title" id="title" placeholder="Title...">
+            </div>
+            <div class="form-group">
+                <label for="title">Author</label>
+                <select name="author_id" id="author_id_edit" class="form-control">
+                    <option value=""> -- Select Author --</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
@@ -49,22 +61,21 @@
             <div class="panel-body">
                 <ul class="list-group" id="booksList">
                     <!--                    EXAMPLE BOOK START-->
-                    <!--                    <li class="list-group-item">-->
+                    <!--					<li class="list-group-item">-->
                     <!--                        <div class="panel panel-default">-->
-                    <!--                            <div class="panel-heading">-->
-                    <!--                                <span class="bookTitle">Example book 1</span>-->
-                    <!--                                <button data-id="1"-->
-                    <!--                                        class="btn btn-danger pull-right btn-xs btn-book-remove"><i-->
-                    <!--                                        class="fa fa-trash"></i>-->
-                    <!--                                </button>-->
-                    <!--                                <button data-id="1"-->
-                    <!--                                        class="btn btn-primary pull-right btn-xs btn-book-show-description"><i-->
-                    <!--                                        class="fa fa-info-circle"></i>-->
-                    <!--                                </button>-->
-                    <!--                            </div>-->
-                    <!--                            <div class="panel-body book-description"></div>-->
-                    <!--                        </div>-->
-                    <!--                    </li>-->
+                    <!--							<div class="panel-heading">-->
+                    <!--								<span class="bookTitle">Example book 1 (author)</span>-->
+                    <!--								<button data-id="1"-->
+                    <!--								        class="btn btn-danger pull-right btn-xs btn-book-remove"><i-->
+                    <!--											class="fa fa-trash"></i>-->
+                    <!--								</button>-->
+                    <!--								<button data-id="1"-->
+                    <!--								        class="btn btn-primary pull-right btn-xs btn-book-show-description"><i-->
+                    <!--											class="fa fa-info-circle"></i>-->
+                    <!--								</button>-->
+                    <!--							</div>-->
+                    <!--							<div class="panel-body book-description"></div>-->
+                    <!--					</li>-->
                     <!--                    EXAMPLE BOOK END-->
                 </ul>
             </div>

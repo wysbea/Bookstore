@@ -13,3 +13,5 @@ function showModal(msg) {
 
     modal.modal('show');
 }
+var mojObiekt = {name: 'json'};
+console.log(JSON.stringify(mojObiekt));

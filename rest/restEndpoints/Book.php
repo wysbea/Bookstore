@@ -10,15 +10,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $book = new Book($conn);
     $book->setTitle($_POST['title']);
     $book->setDescription($_POST['description']);
+    $book->setAuthorId($_POST['author_id']);
 
     $book->save();
 
     $response = ['success' => [json_decode(json_encode($book), true)]];
 } elseif ($_SERVER['REQUEST_METHOD'] == 'PATCH') {
     parse_str(file_get_contents("php://input"), $patchVars);
+
     $bookToEdit = Book::loadAll($conn, $pathId)[0];
     $bookToEdit->setTitle($patchVars['title']);
     $bookToEdit->setDescription($patchVars['description']);
+    $bookToEdit->setAuthorId($patchVars['author_id']);
 
     $bookToEdit->save();
 
